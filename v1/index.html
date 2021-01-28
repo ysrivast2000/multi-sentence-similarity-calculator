@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" \>
+		<!--meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="" /-->
+		<title>Word Semantic Similarity Calculator</title>
+
+		<link href="styles.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<form action="form-handle.php" method="post" id="submission">
+			<textarea cols=80 rows=12 name="key">Key Text</textarea></br>
+			<textarea cols=80 rows=12 name="target">Target Text</textarea></br>
+			<!-- https://stackoverflow.com/a/28838789 -->
+			Value <input type="text" name="value" size=8 value=1
+				oninput="this.value = this.value.replace(/[^0-9.]/g, '')
+				.replace(/(\..*)\./g, '$1');" /></br>
+			<progress id="progress" style="display:none">Preprocessing...</progress>
+			<input type="submit" value="Compare" id="submitButton"
+				style="display:inline" />
+			<img src="loading.gif" alt="Loading..." id="loader"
+				style="display:none; vertical-align:middle" width=25 />
+		</form>
+	</body>
+</html>
